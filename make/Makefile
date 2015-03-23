@@ -82,7 +82,7 @@ endif
 # C++ compiler settings:
 CXX 		= g++
 CXX_INCLUDE	= -I$(SRC_DIR) -I$(SRC_EXT_DIR) -I$(SRC_TEST) -I$(ICON_DIR)
-CXX_OPT		= -O3
+CXX_OPT		= -O3 -g
 CXX_DEBUG	= $(SANITIZE)
 CXX_WFLAGS	= -Wno-write-strings #-W -Wall -Wunused -Wshadow -Wconversion -Wsign-conversion\
 			  -Wextra -ansi -pedantic -Wno-write-strings -fno-strict-aliasing 

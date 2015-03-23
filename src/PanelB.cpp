@@ -18,5 +18,6 @@ MyPanelB::~MyPanelB() {
 void MyPanelB::f() {
     std::cout << "MyPanelB::f" << std::endl;
     std::cout << "ptr=" << b << std::endl;
+    std::cout << "x=" << b->x << std::endl;
 }
 

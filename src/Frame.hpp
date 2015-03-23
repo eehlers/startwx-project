@@ -3,6 +3,7 @@
 #define MAIN_H
 
 #include <wx/wx.h>
+#include "PanelB.hpp"
 #include "abc.hpp"
 
 class MyFrame: public wxFrame
@@ -20,6 +21,8 @@ class MyFrame: public wxFrame
 
         void OnButton (wxCommandEvent&);
         void f();
+
+        MyPanelB *m_panelB;
 
         boost::shared_ptr<A> a;
 
