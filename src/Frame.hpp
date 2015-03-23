@@ -3,18 +3,12 @@
 #define MAIN_H
 
 #include <wx/wx.h>
-//#include <wx/button.h>
-//#include <wx/textctrl.h>
-//#include <wx/notebook.h>
-//#include <wx/aboutdlg.h>
-//#include <wx/config.h>
+#include "abc.hpp"
 
 class MyFrame: public wxFrame
 {
-        enum wxIDs
-        {
-            ID_ABOUT = wxID_HIGHEST
-                        , SOME_ID
+        enum wxIDs {
+            ID_ABOUT = wxID_HIGHEST, ID_BTN_GO
         };
 
     public:
@@ -24,7 +18,10 @@ class MyFrame: public wxFrame
 
     private:
 
-        void OnButton (wxCommandEvent& );
+        void OnButton (wxCommandEvent&);
+        void f();
+
+        boost::shared_ptr<A> a;
 
         DECLARE_EVENT_TABLE()
 };

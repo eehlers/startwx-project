@@ -1,35 +1,39 @@
 
 #include "Frame.hpp"
-//#include <wx/textdlg.h>
 #include "PanelB.hpp"
 
 BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-    EVT_BUTTON(SOME_ID, MyFrame::OnButton)
+    EVT_BUTTON(ID_BTN_GO, MyFrame::OnButton)
 END_EVENT_TABLE()
 
 MyFrame::MyFrame(wxFrame *frame, const wxString& title)
     : wxFrame(frame, -1, title, wxDefaultPosition, wxSize(600, 600))
 {
-//    this->SetSizeHints(wxDefaultSize, wxDefaultSize);
-//
-//    wxBoxSizer* boxSizer = new wxBoxSizer( wxVERTICAL );
-    wxStaticText *s = new wxStaticText(this, wxID_ANY, wxT("A"));
-    MyPanelB *m_panelB = new MyPanelB(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200));
-//    boxSizer->Add(m_panel, 1, wxALL | wxEXPAND, 5);
-//    this->SetSizer( boxSizer );
-//    this->Layout();
-//    this->SetSize(300, 150);
+    boost::shared_ptr<C> c = boost::shared_ptr<C>(new C(3));
+    boost::shared_ptr<B> b = boost::shared_ptr<B>(new B(c, 2));
+    a = boost::shared_ptr<A>(new A(b, 1));
+
+    wxPanel *m_panel = new wxPanel(this, wxID_ANY, wxPoint(0, 0), wxSize(600, 600));
+    wxStaticText *s = new wxStaticText(m_panel, wxID_ANY, wxT("A"), wxPoint(10, 10));
+    wxButton *m_btn_go = new wxButton(m_panel, ID_BTN_GO, _T("GO"), wxPoint(50, 10));
+    //MyPanelB *m_panelB = new MyPanelB(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200), b);
 }
 
 MyFrame::~MyFrame(void)
 {
 }
 
+void MyFrame::f() {
+    std::cout << "MyFrame::f" << std::endl;
+    a->f();
+}
+
 void MyFrame::OnButton(wxCommandEvent &event)
 {
     switch(event.GetId()) {
-        case SOME_ID:
+        case ID_BTN_GO:
         {
+            void f();
             break;
         }
         default:
