@@ -4,6 +4,7 @@
 
 #include <wx/wx.h>
 #include "abc.hpp"
+#include "PanelC.hpp"
 
 class MyPanelB : public wxPanel {
 
@@ -15,6 +16,7 @@ class MyPanelB : public wxPanel {
 
     private:
 
+        MyPanelC *m_panelC;
         boost::shared_ptr<B> b;
 };
 

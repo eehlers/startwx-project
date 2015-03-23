@@ -8,6 +8,7 @@ MyPanelB::MyPanelB(wxWindow *parent, wxWindowID id, const wxPoint &pos, const wx
 {
     std::cout << "MyPanelB::MyPanelB" << std::endl;
     wxStaticText *s = new wxStaticText(this, wxID_ANY, wxT("B"));
+    m_panelC = new MyPanelC(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200), b->c);
     std::cout << "ptr=" << b << std::endl;
 }
 
@@ -19,5 +20,6 @@ void MyPanelB::f() {
     std::cout << "MyPanelB::f" << std::endl;
     std::cout << "ptr=" << b << std::endl;
     std::cout << "x=" << b->x << std::endl;
+    m_panelC->f();
 }
 
