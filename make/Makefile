@@ -46,7 +46,7 @@ endif
 
 # ----------------------------------------------------------------------
 # Configure wxWidgets build
-WXVERSION = 3.1
+WXVERSION = 3.0
 WXCONFIG_CALL = `wx-config --cxxflags --unicode=yes --version=$(WXVERSION)`
 WXCONFIG_LINKER_CALL = `wx-config --version=$(WXVERSION) --libs adv,aui,core,base,html,richtext,xml`
 
