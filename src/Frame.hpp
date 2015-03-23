@@ -3,11 +3,11 @@
 #define MAIN_H
 
 #include <wx/wx.h>
-#include <wx/button.h>
-#include <wx/textctrl.h>
-#include <wx/notebook.h>
-#include <wx/aboutdlg.h>
-#include <wx/config.h>
+//#include <wx/button.h>
+//#include <wx/textctrl.h>
+//#include <wx/notebook.h>
+//#include <wx/aboutdlg.h>
+//#include <wx/config.h>
 
 class MyFrame: public wxFrame
 {
@@ -25,8 +25,6 @@ class MyFrame: public wxFrame
     private:
 
         void OnButton (wxCommandEvent& );
-
-        wxPanel * m_panel;
 
         DECLARE_EVENT_TABLE()
 };

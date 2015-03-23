@@ -111,14 +111,16 @@ all: $(BIN_DIR)/$(APP_NAME)
 # ----------------------------------------------------------------------
 # Linker rules:
 $(BIN_DIR)/$(APP_NAME) : $(OBJ_DIR)/Application.o\
-						 $(OBJ_DIR)/Frame.o
+						 $(OBJ_DIR)/Frame.o\
+						 $(OBJ_DIR)/PanelB.o
 	    
 	$(LINKER_CALL)
 
 # ----------------------------------------------------------------------
 # C++ sources:
 SRCS =  $(SRC_DIR)/Application.cpp\
-	    $(SRC_DIR)/Frame.cpp
+	    $(SRC_DIR)/Frame.cpp\
+	    $(SRC_DIR)/PanelB.cpp
 
 # ----------------------------------------------------------------------
 # C sources: 
