@@ -16,6 +16,7 @@ MyDialogA::MyDialogA(wxWindow *parent, wxWindowID id, const wxString &title) :
     wxStaticText *s = new wxStaticText(this, wxID_ANY, wxT("A"), wxPoint(10, 10));
     wxButton *m_btn_go = new wxButton(this, ID_BTN_GO, _T("GO"), wxPoint(50, 10));
     m_panelB = new MyPanelB(this, wxID_ANY, wxPoint(100, 100), wxSize(200, 200), b);
+    f();
 }
 
 MyDialogA::~MyDialogA() {
