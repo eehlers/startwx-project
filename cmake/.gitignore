@@ -1,1 +1,5 @@
-.gitignore
+CMakeCache.txt
+CMakeFiles/
+Foo
+Makefile
+cmake_install.cmake
