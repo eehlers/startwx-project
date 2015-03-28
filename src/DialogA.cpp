@@ -7,10 +7,22 @@ BEGIN_EVENT_TABLE(MyDialogA, wxDialog)
 END_EVENT_TABLE()
 
 MyDialogA::MyDialogA(wxWindow *parent, wxWindowID id, const wxString &title) :
-    wxDialog(parent, id, title, wxDefaultPosition, wxSize(700, 700))
+    wxDialog(parent, id, title, wxDefaultPosition, wxSize(300, 200))
 {
-    wxStaticText *s = new wxStaticText(this, wxID_ANY, wxT("A"), wxPoint(10, 10));
-    wxButton *m_btn_go = new wxButton(this, ID_BTN_GO, _T("GO"), wxPoint(50, 10));
+    wxBoxSizer *s = new wxBoxSizer(wxVERTICAL);
+    s->Add(new wxButton(this, wxID_ANY, _T("b0")));
+    s->AddStretchSpacer();
+    s->Add(new wxButton(this, wxID_ANY, _T("b1")));
+
+    wxFlexGridSizer *g = new wxFlexGridSizer(2, 0, 0);
+    g->AddGrowableCol(0, 1);
+    g->AddGrowableRow(0, 1);
+    g->Add(new wxPanel(this, wxID_ANY, wxPoint(0, 0), wxSize(200, 200)), wxSizerFlags().Expand());
+    g->Add(s, wxSizerFlags().Expand());
+
+    g->SetSizeHints(this);
+    this->SetSizer(g);
+    this->Layout();
 }
 
 MyDialogA::~MyDialogA() {
